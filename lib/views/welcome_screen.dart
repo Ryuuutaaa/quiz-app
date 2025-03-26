@@ -7,31 +7,33 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              "Lets Play Quiz",
-              style: Theme.of(context).textTheme.headlineMedium!.copyWith(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const Text("Enter your Informastion below"),
-            const Spacer(),
-            TextField(
-              decoration: const InputDecoration(
-                filled: true,
-                fillColor: Color(0XFF1C2341),
-                hintText: "Full Name plase",
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(12)),
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "Lets Play Quiz",
+                style: Theme.of(context).textTheme.headlineMedium!.copyWith(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
-            ),
-          ],
+              const Text("Enter your Informastion below"),
+              const Spacer(),
+              TextField(
+                decoration: const InputDecoration(
+                  filled: true,
+                  fillColor: Color(0XFF1C2341),
+                  hintText: "Full Name plase",
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(12)),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
