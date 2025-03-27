@@ -44,6 +44,10 @@ class WelcomeScreen extends StatelessWidget {
                   Container(
                     width: double.infinity,
                     padding: const EdgeInsets.all(kDefaultPadding * 0.75),
+                    decoration: BoxDecoration(
+                      gradient: kPrimaryGradient,
+                      borderRadius: BorderRadius.all(Radius.circular(12)),
+                    ),
                     alignment: Alignment.center,
                     child: Text(
                       "Let's Start Quiz",
@@ -52,6 +56,7 @@ class WelcomeScreen extends StatelessWidget {
                       ).textTheme.labelLarge!.copyWith(color: Colors.black),
                     ),
                   ),
+                  const Spacer(flex: 2),
                 ],
               ),
             ),
