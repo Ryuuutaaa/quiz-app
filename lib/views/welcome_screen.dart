@@ -3,7 +3,9 @@ import 'package:flutter_svg/svg.dart';
 import 'package:quiz_application/utils/constants.dart';
 
 class WelcomeScreen extends StatelessWidget {
-  const WelcomeScreen({super.key});
+  TextEditingController userNameController = TextEditingController();
+
+  WelcomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +31,7 @@ class WelcomeScreen extends StatelessWidget {
                   const Text("Enter your information below"),
                   const Spacer(),
                   TextField(
+                    controller: userNameController,
                     decoration: const InputDecoration(
                       filled: true,
                       fillColor: Color(0xFF1C2341),
@@ -36,6 +39,17 @@ class WelcomeScreen extends StatelessWidget {
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(12)),
                       ),
+                    ),
+                  ),
+                  Container(
+                    width: double.infinity,
+                    padding: const EdgeInsets.all(kDefaultPadding * 0.75),
+                    alignment: Alignment.center,
+                    child: Text(
+                      "Let's Start Quiz",
+                      style: Theme.of(
+                        context,
+                      ).textTheme.labelLarge!.copyWith(color: Colors.black),
                     ),
                   ),
                 ],
