@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get_navigation/get_navigation.dart';
+import 'package:get/utils.dart';
 import 'package:quiz_application/utils/constants.dart';
+import 'package:quiz_application/views/quiz_categoryScreen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   TextEditingController userNameController = TextEditingController();
@@ -41,19 +44,26 @@ class WelcomeScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Container(
-                    width: double.infinity,
-                    padding: const EdgeInsets.all(kDefaultPadding * 0.75),
-                    decoration: BoxDecoration(
-                      gradient: kPrimaryGradient,
-                      borderRadius: BorderRadius.all(Radius.circular(12)),
-                    ),
-                    alignment: Alignment.center,
-                    child: Text(
-                      "Let's Start Quiz",
-                      style: Theme.of(
-                        context,
-                      ).textTheme.labelLarge!.copyWith(color: Colors.black),
+                  const Spacer(),
+
+                  GestureDetector(
+                    onTap: () {
+                      Get.to(QuizCategoryscreen());
+                    },
+                    child: Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.all(kDefaultPadding * 0.75),
+                      decoration: BoxDecoration(
+                        gradient: kPrimaryGradient,
+                        borderRadius: BorderRadius.all(Radius.circular(12)),
+                      ),
+                      alignment: Alignment.center,
+                      child: Text(
+                        "Let's Start Quiz",
+                        style: Theme.of(
+                          context,
+                        ).textTheme.labelLarge!.copyWith(color: Colors.black),
+                      ),
                     ),
                   ),
                   const Spacer(flex: 2),
